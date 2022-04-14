@@ -40,8 +40,11 @@ defmodule SquareUp.V2.CatalogObjects do
   def batch_retrieve(client, path_params \\ %{}, params \\ %{}, query_params \\ %{}) do
     path_params_spec = schema(%{})
 
-    params_spec =
-      Norm.Delegate.delegate(&SquareUp.NormSchema.batch_retrieve_catalog_objects_request/0)
+    #params_spec =
+     # Norm.Delegate.delegate(&SquareUp.NormSchema.batch_retrieve_catalog_objects_request/0)
+
+    # Disable Norm check of params because passing an array of binaries is crashing the check.
+    params_spec = schema(%{})
 
     query_params_spec = schema(%{})
 
