@@ -2065,7 +2065,7 @@ defmodule SquareUp.NormSchema do
       fulfillments:
         spec(coll_of(Norm.Delegate.delegate(&SquareUp.NormSchema.order_fulfillment/0))),
       id: spec(is_binary()),
-      line_items: spec(coll_of(Norm.Delegate.delegate(&SquareUp.NormSchema.order_line_item/0))),
+      #line_items: spec(coll_of(Norm.Delegate.delegate(&SquareUp.NormSchema.order_line_item/0))),
       location_id: spec(is_binary()),
       metadata: schema(%{}),
       net_amounts: Norm.Delegate.delegate(&SquareUp.NormSchema.order_money_amounts/0),
